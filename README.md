@@ -8,19 +8,25 @@ A web application for converting Magento CSV data to fulfillment system format.
 - Customizable settings for data conversion
 - Automatic handling of additional attributes
 - Flexible field mapping with fallback to default values
+- Support for bundle products
+- Automatic category extraction
+- Additional attributes parsing
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/wms-convert.git
-cd wms-convert
+git clone https://github.com/azharudh33n/WMS-Convert.git
+cd WMS-Convert
 ```
 
 2. Create a virtual environment and activate it:
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
 ```
 
 3. Install dependencies:
@@ -40,13 +46,21 @@ python app.py
 http://127.0.0.1:5000
 ```
 
-3. Configure your default settings in the web interface
+3. Configure your default settings in the web interface:
+   - Unit Price Currency (default: USD)
+   - Tax Calculation Type (default: STANDARD)
+   - Threshold for Notification (default: 5)
+   - Threshold Quantity (default: 10)
+   - Component Quantity (default: 1)
+   - Expirable (default: No)
+
 4. Upload your Magento CSV file
 5. Download the converted file
 
 ## Settings
 
-The application allows you to set default values for the following fields:
+The application allows you to set default values for various fields. These values can be overridden by data in the CSV file if available:
+
 - Unit Price Currency (default: USD)
 - Tax Calculation Type (default: STANDARD)
 - Threshold for Notification (default: 5)
@@ -54,8 +68,26 @@ The application allows you to set default values for the following fields:
 - Component Quantity (default: 1)
 - Expirable (default: No)
 
-These values can be overridden by data in the CSV file if available.
+## Project Structure
+
+```
+WMS-Convert/
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── main.js
+├── templates/
+│   └── index.html
+├── app.py
+├── requirements.txt
+└── README.md
+```
 
 ## License
 
-MIT License 
+MIT License
+
+## Author
+
+[Azhar Uddin](https://github.com/azharudh33n) 
