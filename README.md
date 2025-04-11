@@ -1,10 +1,10 @@
-# WMS Convert
+# Magento to RSA Global WMS Converter
 
-A web application for converting Magento CSV data to fulfillment system format.
+A web application for converting Magento CSV export data to RSA Global Warehouse Management System (WMS) format.
 
 ## Features
 
-- Upload and process Magento CSV files
+- Convert Magento CSV exports to RSA Global WMS format
 - Customizable settings for data conversion
 - Automatic handling of additional attributes
 - Flexible field mapping with fallback to default values
@@ -14,7 +14,7 @@ A web application for converting Magento CSV data to fulfillment system format.
 
 ## Installation
 
-1. Clone the repository:
+1. Clone this repository:
 ```bash
 git clone https://github.com/azharudh33n/WMS-Convert.git
 cd WMS-Convert
@@ -54,8 +54,8 @@ http://127.0.0.1:5000
    - Component Quantity (default: 1)
    - Expirable (default: No)
 
-4. Upload your Magento CSV file
-5. Download the converted file
+4. Upload your Magento CSV export file
+5. Download the converted RSA Global WMS format file
 
 ## Settings
 
@@ -86,8 +86,4 @@ WMS-Convert/
 
 ## License
 
-MIT License
-
-## Author
-
-[Azhar Uddin](https://github.com/azharudh33n) 
+MIT License 
