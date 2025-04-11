@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magento to Fulfillment SKU Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Magento to Fulfillment SKU Converter</h1>
+            <p>Upload your Magento export CSV file to convert it to the fulfillment SKU format</p>
+        </header>
+
+        <main>
+            <div class="settings-container">
+                <h2>Default Settings</h2>
+                <form id="settingsForm">
+                    <div class="settings-grid">
+                        <div class="setting-item">
+                            <label for="unitPriceCurrency">Unit Price Currency:</label>
+                            <input type="text" id="unitPriceCurrency" value="USD">
+                        </div>
+                        <div class="setting-item">
+                            <label for="taxCalculationType">Tax Calculation Type:</label>
+                            <input type="text" id="taxCalculationType" value="STANDARD">
+                        </div>
+                        <div class="setting-item">
+                            <label for="thresholdNotification">Threshold for Notification:</label>
+                            <input type="number" id="thresholdNotification" value="5">
+                        </div>
+                        <div class="setting-item">
+                            <label for="thresholdQuantity">Threshold Quantity:</label>
+                            <input type="number" id="thresholdQuantity" value="10">
+                        </div>
+                        <div class="setting-item">
+                            <label for="componentQuantity">Component Quantity:</label>
+                            <input type="number" id="componentQuantity" value="1">
+                        </div>
+                        <div class="setting-item">
+                            <label for="expirable">Expirable:</label>
+                            <select id="expirable">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="button" id="saveSettings" class="settings-button">Save Settings</button>
+                </form>
+            </div>
+
+            <div class="upload-container">
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="file-input-container">
+                        <input type="file" id="fileInput" name="file" accept=".csv" required>
+                        <label for="fileInput" class="file-label">
+                            <span class="file-button">Choose File</span>
+                            <span class="file-name">No file chosen</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="upload-button">Convert & Download</button>
+                </form>
+            </div>
+
+            <div class="status-container">
+                <div id="statusMessage" class="status-message"></div>
+                <div id="progressBar" class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="instructions">
+                <h2>Instructions</h2>
+                <ol>
+                    <li>Set your default values in the settings section (optional)</li>
+                    <li>Upload your Magento export CSV file</li>
+                    <li>The system will automatically process the file</li>
+                    <li>Download the converted CSV file with the fulfillment SKU format</li>
+                </ol>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
